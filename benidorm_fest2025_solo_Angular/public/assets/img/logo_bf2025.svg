@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="logo_bf2025.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.68862935"
+     inkscape:cx="397.16576"
+     inkscape:cy="561.25984"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="opacity:0;fill:#00ffff;stroke-width:0.264583"
+       id="path1"
+       cx="98.551743"
+       cy="63.972183"
+       r="9.7975416" />
+    <ellipse
+       style="opacity:0;fill:#00ffff;stroke-width:0.264583"
+       id="path2"
+       cx="90.867401"
+       cy="83.951485"
+       rx="17.481888"
+       ry="15.560802" />
+    <rect
+       style="opacity:0.81;fill:#00ffff;stroke-width:0.264583"
+       id="rect2"
+       width="19.210867"
+       height="19.210867"
+       x="46.490295"
+       y="88.754204" />
+    <circle
+       style="opacity:0.81;fill:#ff0000;stroke-width:0.199685"
+       id="path3"
+       cx="56.479946"
+       cy="97.975426"
+       r="7.6843462" />
+    <ellipse
+       style="opacity:0.81;fill:#ff0000;stroke-width:0.264583"
+       id="path4"
+       cx="56.287838"
+       cy="98.551743"
+       rx="14.023932"
+       ry="14.792367" />
+    <rect
+       style="opacity:0.81;fill:#00ffff;stroke-width:0.264583"
+       id="rect4"
+       width="35.732212"
+       height="36.116428"
+       x="38.037514"
+       y="79.917206" />
+    <text
+       xml:space="preserve"
+       style="font-size:12.2175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:0.81;fill:#00ffff;stroke-width:1.01812"
+       x="81.34539"
+       y="91.368378"
+       id="text4"><tspan
+         id="tspan4"
+         style="stroke-width:1.01812"
+         x="81.34539"
+         y="91.368378"
+         sodipodi:role="line">BENIDORM </tspan><tspan
+         style="stroke-width:1.01812"
+         x="81.34539"
+         y="106.64025"
+         sodipodi:role="line"
+         id="tspan5"><tspan
+   style="fill:#ff0000"
+   id="tspan6">FEST</tspan> 20<tspan
+   style="fill:#ff0000"
+   id="tspan7">25</tspan></tspan></text>
+  </g>
+</svg>

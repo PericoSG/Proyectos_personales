@@ -1,0 +1,39 @@
+
+
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <a href="#">
+        <img class="rounded-t-lg" src="{{artista.image}}" alt="" />
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{artista.artista}} - {{artista.cancion}}</h5>
+        </a>
+    
+
+        @if(EstaEnMiTop(artista))
+        {
+            <div class="flex items-center space-x-2 bg-green-100 text-green-800 p-3 rounded-lg shadow-md">
+                <!-- Icono de confirmación -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 11l3 3L22 4"/>
+                  </svg>
+                <!-- Mensaje personalizado -->
+                <p class="font-semibold text-lg">¡ {{artista.artista}} ya está en tu top!</p>
+            </div>
+            
+        }
+        @else 
+        {
+            <a #artist (click)="Agregar_a_top(artista)" href="top" routerLink="/top" routerLinkActive="active"
+            class="inline-flex items-center px-5 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-blue-700 rounded-full 
+                    hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all ease-in-out duration-300 
+                    shadow-lg transform hover:scale-105">
+                Agregar a mi top
+                <svg class="w-4 h-4 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </a>
+        }
+        
+    </div>
+</div>

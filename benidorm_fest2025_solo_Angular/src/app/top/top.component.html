@@ -1,0 +1,12 @@
+
+<div class="container mx-auto px-4 py-8">
+    <!-- Contenedor de tarjetas (grid) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
+@for (artist of getTop(); track $index) 
+{
+    <app-artista-en-top [artist_top]="artist" [index] = "getIndex($index)"></app-artista-en-top>
+    
+}
+</div>
+
+</div>

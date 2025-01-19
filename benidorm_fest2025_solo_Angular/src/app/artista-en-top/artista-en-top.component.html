@@ -1,0 +1,26 @@
+<ul class="space-y-6">
+  <!-- Elemento del top -->
+  <li class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <!-- Posición -->
+    <span class="text-3xl font-bold text-blue-600">{{index}}.</span>
+
+    <!-- Imagen más pequeña -->
+    <img src="{{artist_top.image}}" alt="Imagen del artista" class="w-20 h-20 rounded-full object-cover m-0 p-0">
+    
+    <!-- Contenido -->
+    <div class="flex-1">
+      <p class="text-xl font-semibold text-gray-900">{{artist_top.artista}}</p>
+      <p class="text-md text-gray-600">{{artist_top.cancion}}</p>
+    </div>
+
+    <!-- Botón de borrar dentro de la cajita -->
+
+    <svg (click)="BorrarDeMiTop(artist_top.artista)" class="w-25 h-8 text-red-600 cursor-pointer hover:text-red-800 transition-all ease-in-out duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </li>
+</ul>
+
+
+
+  

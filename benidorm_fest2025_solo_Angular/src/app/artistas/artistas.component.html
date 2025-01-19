@@ -1,0 +1,16 @@
+
+<div class="container mx-auto px-4 py-8">
+    <!-- Contenedor de tarjetas (grid) -->
+
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-center text-gray-900 mb-12">
+        Participantes del Benidorm Fest 2025
+    </h1>
+     
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
+@for (artist of getBenidormArtist(); track $index) 
+{
+    <app-tarjeta-artista [artista]="artist"></app-tarjeta-artista>
+}
+</div>
+
+</div>
