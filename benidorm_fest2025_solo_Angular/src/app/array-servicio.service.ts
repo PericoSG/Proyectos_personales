@@ -5,7 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class ArrayServicioService {
 
-  constructor() { }
+  constructor() {
+
+    const mi_top_guardado = localStorage.getItem("mi_top");
+    if (mi_top_guardado) {
+      this.mi_top = JSON.parse(mi_top_guardado);
+    } else {
+      this.mi_top = [];  // Inicializa myVehicles como un arreglo vacío si no hay datos en localStorage
+    }
+  }
 
   private benidormFest2025 = [
     {
@@ -120,6 +128,7 @@ export class ArrayServicioService {
     if(!this.EstaEnMiTop(artista) || this.benidormFest2025.length == 0)
     {
         this.mi_top.push(artista);
+        localStorage.setItem("mi_top",JSON.stringify(this.mi_top));
     }
       
 
@@ -140,6 +149,7 @@ export class ArrayServicioService {
     if (index !== -1) {
       // Eliminar solo el elemento en el índice encontrado (pasando 1 como el segundo parámetro)
       this.mi_top.splice(index, 1); 
+      localStorage.setItem("mi_top",JSON.stringify(this.mi_top));
       console.log(`Elemento borrado: ${artista.artista}`);
     } else {
       console.log(`No se encontró el artista con el artista: ${artista.artista}`);
