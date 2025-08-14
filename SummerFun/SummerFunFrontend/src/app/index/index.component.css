@@ -1,0 +1,63 @@
+ body {
+   font-family: 'Poppins', sans-serif;
+   background-color: #f2f6fa;
+ }
+
+ .navbar {
+   padding: 1rem 0;
+ }
+
+ .hero {
+   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+     url('https://images.unsplash.com/photo-1584467735871-4efbcf5ed94d?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+   color: white;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   padding: 0 15px;
+ }
+
+ .hero h1 {
+   font-size: 3.5rem;
+   font-weight: 700;
+   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+ }
+
+ .hero p {
+   font-size: 1.4rem;
+   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+ }
+
+ .btn-primary {
+   background-color: #ff7e5f;
+   border: none;
+ }
+
+ .btn-primary:hover {
+   background-color: #eb5e3e;
+ }
+
+ .section-title {
+   font-weight: 700;
+   margin-bottom: 2rem;
+ }
+
+ .feature-icon {
+   font-size: 3rem;
+   color: #ff7e5f;
+   margin-bottom: 1rem;
+ }
+
+ .testimonial {
+   background-color: white;
+   padding: 2rem;
+   border-radius: 1rem;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+ }
+
+ footer {
+   background-color: #343a40;
+   color: white;
+ }
