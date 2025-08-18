@@ -15,13 +15,13 @@ public class ComentarioServiceImpl  implements ComentarioService {
     ComentarioRepository comentarioRepository;
 
     @Override
-    public ResponseEntity<String> crearMensaje(String nombre, String email, String mensaje){
+    public ResponseEntity<?> crearMensaje(String nombre, String email, String mensaje){
         Comentario nuevoComentario = new Comentario();
         nuevoComentario.setNombre(nombre);
         nuevoComentario.setEmail(email);
         nuevoComentario.setMensaje(mensaje);
         comentarioRepository.save(nuevoComentario);
-        return new ResponseEntity<>("¡Se ha guardado tu mensaje, gracias por contactar con nosotros!", HttpStatus.CREATED);
+        return new ResponseEntity<>(nuevoComentario, HttpStatus.CREATED);
 
     }
 }

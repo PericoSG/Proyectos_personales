@@ -1,40 +1,79 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IndexService } from '../index.service';
-import { Comentario } from '../models/comentario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
-  imports: [FormsModule, CommonModule],
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })
 export class IndexComponent {
 
-  nombre: string = "";
-  email: string = "";
-  mensaje: string = "";
-  comentario: Comentario = { nombre: "", email: "", mensaje: "" };
+  comentarioForm: FormGroup;
+  generalError: string = "";
+  isLoading: boolean = false;
+  estaEnviado = false;
+  comentarioOK = false;
 
-
-  constructor(private comentarioService: IndexService) { }
-  enviarMensaje() {
-    console.log(this.nombre);
-    console.log(this.email);
-    console.log(this.mensaje)
-
-    this.comentario = { nombre: this.nombre, email: this.email, mensaje: this.mensaje }
-
-    console.log(typeof (this.comentario))
-    this.comentarioService.enviarMensaje(this.comentario).subscribe(
-      response => {
-        alert("Comentario guardado, muchas gracias!")
-      },
-      error => {
-        alert("ha dado un error");
-      }
-    );
+  constructor(
+    private router: Router,
+    // private auth: AuthService,
+    private index: IndexService,
+    private fb: FormBuilder
+  ) {
+    this.comentarioForm = this.fb.group({
+      nombre: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      mensaje: ['', [Validators.required, Validators.minLength(3)]]
+    });
   }
 
+  // ngOnInit(): void {
+  //     this.auth.checkSession().subscribe({
+  //         next: () => {
+  //             sessionStorage.setItem("usuarioActual", "true");
+  //             this.router.navigate(['/inicio']);
+  //         },
+  //         error: () => {
+  //             sessionStorage.removeItem("usuarioActual");
+  //             console.log("No hay sesión activa");
+  //         }
+  //     });
+  // }
+
+  get f() { return this.comentarioForm.controls; }
+
+  enviarMensaje() {
+    this.generalError = "";
+    this.estaEnviado = false;
+    this.comentarioOK = false;
+    this.comentarioForm.markAllAsTouched();
+
+    if (this.comentarioForm.invalid) {
+      // Solo error de validación, no se envía nada al servidor
+      this.generalError = "Por favor, rellena todos los campos correctamente.";
+      return;
+    }
+
+    this.isLoading = true;
+    this.index.enviarMensaje(this.comentarioForm.value).subscribe({
+      next: () => {
+        this.isLoading = false;
+        this.estaEnviado = true;
+        this.comentarioOK = true;
+        this.generalError = "";
+        this.comentarioForm.reset();
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.estaEnviado = true;
+        this.comentarioOK = false;
+        this.generalError = "Ha ocurrido un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.";
+      }
+    });
+  }
 }

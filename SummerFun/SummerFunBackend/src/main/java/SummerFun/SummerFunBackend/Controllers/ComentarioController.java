@@ -16,7 +16,7 @@ public class ComentarioController {
     ComentarioService comentarioService;
 
     @PostMapping("crearMensaje")
-    public ResponseEntity<String> crearMensaje(@RequestBody Comentario comentario){
+    public ResponseEntity<?> crearMensaje(@RequestBody Comentario comentario){
         System.out.println(comentario.getNombre());
         return comentarioService.crearMensaje(comentario.getNombre(), comentario.getEmail(), comentario.getMensaje());
     }

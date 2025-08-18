@@ -87,21 +87,60 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form (ngSubmit)="enviarMensaje()">
+        <form [formGroup]="comentarioForm" (ngSubmit)="enviarMensaje()">
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre (No hace falta apellidos)</label>
-            <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" name="nombre">
+            <input type="text" class="form-control" id="nombre" formControlName="nombre"
+              [class.is-invalid]="f['nombre'].invalid && (f['nombre'].touched || f['nombre'].dirty)">
+            @if (f['nombre'].invalid && (f['nombre'].touched || f['nombre'].dirty)) {
+            <div class="invalid-feedback d-block">
+              <span *ngIf="f['nombre'].errors?.['required']">El nombre es obligatorio.</span>
+              <span *ngIf="f['nombre'].errors?.['minlength']">Mínimo 3 caracteres.</span>
+            </div>
+            }
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email " [(ngModel)]="email" name="email">
+            <input type="email" class="form-control" id="email" formControlName="email"
+              [class.is-invalid]="f['email'].invalid && (f['email'].touched || f['email'].dirty)">
+            @if (f['email'].invalid && (f['email'].touched || f['email'].dirty)) {
+            <div class="invalid-feedback d-block">
+              <span *ngIf="f['email'].errors?.['required']">El correo es obligatorio.</span>
+              <span *ngIf="f['email'].errors?.['email']">Debe llevar el formato del email.</span>
+            </div>
+            }
           </div>
           <div class="mb-3">
             <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" rows="4" [(ngModel)]="mensaje" name="mensaje"></textarea>
+            <textarea class="form-control" id="mensaje" formControlName="mensaje"
+              [class.is-invalid]="f['mensaje'].invalid && (f['mensaje'].touched || f['mensaje'].dirty)"></textarea>
+            @if (f['mensaje'].invalid && (f['mensaje'].touched || f['mensaje'].dirty)) {
+            <div class="invalid-feedback d-block">
+              <span *ngIf="f['mensaje'].errors?.['required']">El mensaje es obligatorio.</span>
+              <span *ngIf="f['mensaje'].errors?.['minlength']">Mínimo 3 caracteres.</span>
+            </div>
+            }
           </div>
-          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+          @if (generalError && comentarioForm.valid && estaEnviado && !comentarioOK) {
+          <div class="alert alert-danger mt-3">
+            {{ generalError }}
+          </div>
+          }
+          @if (generalError && comentarioForm.invalid) {
+          <div class="alert alert-danger mt-3">
+            {{ generalError }}
+          </div>
+          }
+          <button type="submit" class="btn btn-primary" [disabled]="isLoading">
+            <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+            Enviar mensaje
+          </button>
         </form>
+        @if (estaEnviado && comentarioOK) {
+        <div class="alert alert-success mt-3">
+          ¡Tu comentario ha sido enviado con éxito! Gracias por compartir tu opinión.
+        </div>
+        }
       </div>
     </div>
   </div>
