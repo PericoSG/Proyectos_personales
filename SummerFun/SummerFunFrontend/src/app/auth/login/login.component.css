@@ -1,0 +1,74 @@
+ body {
+   font-family: 'Poppins', sans-serif;
+   background-color: #f0f4f8;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+ }
+
+ .login-card {
+   background-color: white;
+   padding: 2.5rem;
+   border-radius: 1rem;
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+   width: 100%;
+   max-width: 420px;
+ }
+
+ .login-title {
+   font-weight: 600;
+   font-size: 1.5rem;
+   margin-bottom: 1rem;
+ }
+
+ .form-control {
+   border-radius: 0.5rem;
+ }
+
+ .btn-primary {
+   background-color: #ff7e5f;
+   border: none;
+ }
+
+ .btn-primary:hover {
+   background-color: #eb5e3e;
+ }
+
+ .google-login {
+   border: 1px solid #ccc;
+   border-radius: 0.5rem;
+   padding: 0.6rem;
+   text-align: center;
+   cursor: pointer;
+   transition: background-color 0.3s;
+ }
+
+ .google-login:hover {
+   background-color: #f1f1f1;
+ }
+
+ .divider {
+   text-align: center;
+   margin: 1.5rem 0;
+   color: #999;
+   position: relative;
+ }
+
+ .divider::before,
+ .divider::after {
+   content: "";
+   position: absolute;
+   height: 1px;
+   background-color: #ddd;
+   top: 50%;
+   width: 40%;
+ }
+
+ .divider::before {
+   left: 0;
+ }
+
+ .divider::after {
+   right: 0;
+ }
