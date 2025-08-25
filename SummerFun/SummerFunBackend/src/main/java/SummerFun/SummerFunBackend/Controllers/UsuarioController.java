@@ -1,5 +1,6 @@
 package SummerFun.SummerFunBackend.Controllers;
 
+import SummerFun.SummerFunBackend.DTO.LoginDTO;
 import SummerFun.SummerFunBackend.Entity.Usuario;
 import SummerFun.SummerFunBackend.Services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,11 @@ public class UsuarioController {
         return usuarioService.crearUsuario(nuevoUsuario.getNombre(),nuevoUsuario.getAp1(),nuevoUsuario.getAp2(),nuevoUsuario.getEmail(),
                 nuevoUsuario.getPassword(),nuevoUsuario.getFechaNacimiento(),nuevoUsuario.getTlf(),
                 nuevoUsuario.getDni(),nuevoUsuario.getNie());
+    }
+
+    @PostMapping("login")
+    private ResponseEntity<?> login(@RequestBody LoginDTO loginDTO){
+        return usuarioService.login(loginDTO.getEmail(),loginDTO.getPassword());
     }
 
     @PutMapping("editarUsuario/{id}")

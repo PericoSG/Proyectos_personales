@@ -73,4 +73,9 @@ public interface UsuarioService {
 
     boolean NieExistente(String nie);
 
+    boolean comprobarPassword(String password, String passwordUsuarioBD);
+
+    String hashPassword(String password);
+
+
 }

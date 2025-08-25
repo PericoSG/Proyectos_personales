@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -18,6 +19,9 @@ import java.util.Optional;
 public class UsuarioServiceimpl implements UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public List<Usuario> mostrarTodosUsuarios() {
@@ -73,7 +77,7 @@ public class UsuarioServiceimpl implements UsuarioService {
         usuario.setAp1(ap1);
         usuario.setAp2(ap2);
         usuario.setEmail(email);
-        usuario.setPassword(password); // ⚠️ Recuerda encriptar en la vida real
+        usuario.setPassword(hashPassword(password)); // ⚠️ Recuerda encriptar en la vida real
         usuario.setFechaNacimiento((java.sql.Date) fechaNacimiento);
         usuario.setTlf(tlf);
         usuario.setDni(dni);
@@ -140,7 +144,7 @@ public class UsuarioServiceimpl implements UsuarioService {
             usuarioEncontrado.setAp1(ap1);
             usuarioEncontrado.setAp2(ap2);
             usuarioEncontrado.setEmail(email);
-            usuarioEncontrado.setPassword(password); // ⚠️ Recuerda encriptar en la vida real
+            usuarioEncontrado.setPassword(hashPassword(password)); // ⚠️ Recuerda encriptar en la vida real
             usuarioEncontrado.setFechaNacimiento((java.sql.Date) fechaNacimiento);
             usuarioEncontrado.setTlf(tlf);
             usuarioEncontrado.setDni(dni);
@@ -166,7 +170,17 @@ public class UsuarioServiceimpl implements UsuarioService {
 
     @Override
     public ResponseEntity<?> login(String email, String password) {
-        return null;
+        Optional<Usuario> usuarioEncontrado = usuarioRepository.findByEmail(email);
+
+        if(usuarioEncontrado.isEmpty()){
+            return new ResponseEntity<>("Email incorrecto",HttpStatus.OK);
+        }
+
+        if(!comprobarPassword(password, usuarioEncontrado.get().getPassword())){
+            return new ResponseEntity<>("Contraseña incorrecta",HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Override
@@ -182,6 +196,16 @@ public class UsuarioServiceimpl implements UsuarioService {
     @Override
     public boolean NieExistente(String nie) {
         return usuarioRepository.existsByNie(nie);
+    }
+
+    @Override
+    public boolean comprobarPassword(String password, String passwordUsuarioBD) {
+        return passwordEncoder.matches(password, passwordUsuarioBD);
+    }
+
+    @Override
+    public String hashPassword(String password) {
+        return passwordEncoder.encode(password);
     }
 
     // Métodos auxiliares
