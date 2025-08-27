@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Comentario } from './models/comentario';
+import { Comentario } from '../models/comentario';
 
 @Injectable({
   providedIn: 'root'

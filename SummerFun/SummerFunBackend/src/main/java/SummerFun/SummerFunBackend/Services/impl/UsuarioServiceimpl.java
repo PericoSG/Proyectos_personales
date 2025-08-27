@@ -10,9 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -172,15 +174,15 @@ public class UsuarioServiceimpl implements UsuarioService {
     public ResponseEntity<?> login(String email, String password) {
         Optional<Usuario> usuarioEncontrado = usuarioRepository.findByEmail(email);
 
-        if(usuarioEncontrado.isEmpty()){
-            return new ResponseEntity<>("Email incorrecto",HttpStatus.OK);
-        }
+        if(usuarioEncontrado.isEmpty() || !comprobarPassword(password, usuarioEncontrado.get().getPassword())){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Map.of(
+                            "status", 401,
+                            "message", "El email o la contraseña son incorrectos",
+                            "timestamp", LocalDateTime.now().toString()
+                    ));        }
 
-        if(!comprobarPassword(password, usuarioEncontrado.get().getPassword())){
-            return new ResponseEntity<>("Contraseña incorrecta",HttpStatus.BAD_REQUEST);
-        }
-
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(usuarioEncontrado,HttpStatus.OK);
     }
 
     @Override

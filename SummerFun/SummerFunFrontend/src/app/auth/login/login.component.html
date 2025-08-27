@@ -5,14 +5,21 @@
       <p class="text-muted">Bienvenido de nuevo a nuestras actividades de verano</p>
     </div>
 
-    <form>
+    <form [formGroup]="loginForm" (ngSubmit)="enviarMensaje()">
+      @if(generalError){
+      <div class="alert alert-danger" role="alert">
+        {{ generalError }}
+      </div>
+      }
       <div class="mb-3">
         <label for="email" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com">
+        <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com" formControlName="email"
+          [class.is-invalid]="f['email'].invalid && (f['email'].touched || f['email'].dirty)">
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password" placeholder="••••••••">
+        <input type="password" class="form-control" id="password" formControlName="password"
+          [class.is-invalid]="f['password'].invalid && (f['password'].touched || f['password'].dirty)">
       </div>
       <div class="d-grid">
         <button type="submit" class="btn btn-primary">Entrar</button>

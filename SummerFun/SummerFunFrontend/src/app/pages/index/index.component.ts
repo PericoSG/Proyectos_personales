@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IndexService } from '../index.service';
 import { Router } from '@angular/router';
+import { IndexService } from '../../services/index.service';
 
 @Component({
   selector: 'app-index',
@@ -68,7 +68,7 @@ export class IndexComponent {
         this.generalError = "";
         this.comentarioForm.reset();
       },
-      error: (error) => {
+      error: (error:any) => {
         this.isLoading = false;
         this.estaEnviado = true;
         this.comentarioOK = false;
