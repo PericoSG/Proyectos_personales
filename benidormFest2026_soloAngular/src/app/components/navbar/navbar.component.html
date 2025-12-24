@@ -1,0 +1,18 @@
+<mat-toolbar class="toolbar-final">
+  <span class="logo">
+    <img src="img/Benidorm_Fest_2026.jpg" alt="Benidorm Fest" class="logo-img">
+    Benidorm Fest
+  </span>
+
+  <span class="spacer"></span>
+
+  <!-- Menú principal -->
+  <ul class="menu-items" [class.show]="menuOpen">
+    <li><a mat-button routerLink="/">Inicio</a></li>
+    <li><a mat-button routerLink="/participantes">Participantes</a></li>
+    <li><a mat-button routerLink="/top">Top 18</a></li>
+  </ul>
+
+  <!-- Botón hamburguesa visible en móvil -->
+  <button class="hamburger" (click)="toggleMenu()">☰</button>
+</mat-toolbar>

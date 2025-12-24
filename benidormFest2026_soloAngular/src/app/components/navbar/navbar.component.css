@@ -1,0 +1,131 @@
+.toolbar-final {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: white;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Menú principal */
+.menu-items {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+}
+
+.menu-items li a {
+  font-weight: 500;
+  text-transform: none;
+  transition: all 0.2s ease;
+}
+
+.menu-items li a:hover {
+  background-color: rgba(8, 61, 253, 0.15);
+  transform: translateY(-2px);
+  border-radius: 6px;
+}
+
+/* Hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  /* Ajuste del toolbar para eliminar el hueco */
+  .toolbar-final {
+    padding: 0 20px !important;
+    /* mantiene tu padding lateral */
+    height: 64px !important;
+    /* altura fija */
+    display: flex;
+    align-items: center;
+  }
+
+  /* Menú móvil pegado al toolbar */
+  .menu-items {
+    position: absolute;
+    top: 64px;
+    /* EXACTAMENTE debajo del toolbar */
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    /* sin espacio arriba */
+    margin: 0;
+    gap: 20px;
+
+    /* Animación */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+
+    z-index: 500;
+    /* NO tapa el contenido */
+  }
+
+  /* Cuando se abre */
+  .menu-items.show {
+    max-height: 300px;
+    padding: 10px;
+    opacity: 1;
+  }
+
+  .menu-items li {
+    width: 100%;
+    text-align: center;
+  }
+
+
+
+  .menu-items li a {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  /* Mostrar hamburguesa */
+  .hamburger {
+    display: block;
+  }
+
+  /* Evitar menú horizontal en móvil */
+  .menu-items {
+    display: flex;
+  }
+}
