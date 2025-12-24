@@ -1,0 +1,108 @@
+/* HERO GENERAL */
+.hero {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background: linear-gradient(135deg, #ff4f9a 0%, #7b2ff7 100%);
+  color: white;
+}
+
+/* BLOQUES SUPERIORES */
+.hero-info {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 18px 25px;
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  min-width: 180px;
+}
+
+.info-box h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.info-box p {
+  margin: 6px 0 0;
+  font-size: 15px;
+}
+
+/* TITULAR */
+.hero-title {
+  font-size: 34px;
+  font-weight: 800;
+  max-width: 750px;
+  margin-bottom: 20px;
+}
+
+/* SUBTÍTULO */
+.hero-subtitle {
+  font-size: 20px;
+  max-width: 650px;
+  margin-bottom: 45px;
+}
+
+/* BOTONES PRINCIPALES */
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.hero-btn {
+  background: rgba(255, 255, 255, 0.25);
+  color: white !important;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: none;
+  backdrop-filter: blur(6px);
+  transition: 0.2s ease;
+}
+
+.hero-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* BOTÓN GRANDE */
+.hero-start {
+  background: white;
+  color: #7b2ff7;
+  padding: 16px 32px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .hero-btn,
+  .hero-start {
+    width: 100%;
+    max-width: 300px;
+  }
+}
