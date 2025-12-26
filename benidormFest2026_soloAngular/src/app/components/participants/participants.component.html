@@ -1,1 +1,11 @@
-<p>participants works!</p>
+<h1>Participantes</h1>
+<div class="bf-grid">
+  @for (item of participants; track $index){
+  <div class="bf-poster">
+    <img [src]="item.image" alt="{{ item.name }}">
+    <div class="bf-info">
+      <h2>{{ item.name }}</h2>
+      <h3>{{ item.song }}</h3>
+    </div>
+  </div>
+  }
