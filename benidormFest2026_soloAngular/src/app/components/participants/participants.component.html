@@ -1,11 +1,13 @@
 <h1>Participantes</h1>
-<div class="bf-grid">
-  @for (item of participants; track $index){
-  <div class="bf-poster">
-    <img [src]="item.image" alt="{{ item.name }}">
-    <div class="bf-info">
-      <h2>{{ item.name }}</h2>
-      <h3>{{ item.song }}</h3>
+<div class="bf-container">
+  @for (participant of participants; track $index){
+  <div id="bf-card-oficial" class="bf-card">
+    <div class="bf-help-icon"> ? </div>
+    <img class="bf-card-img" [src]="participant.image" alt="{{ participant.name }}">
+    <div class="bf-card-info">
+      <h2 class="bf-card-name">{{ participant.name }}</h2>
+      <h3 class="bf-card-song">{{ participant.song }}</h3>
     </div>
   </div>
   }
+</div>

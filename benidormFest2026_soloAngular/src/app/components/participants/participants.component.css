@@ -1,6 +1,96 @@
-.bf-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+.bf-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
   padding: 20px;
+}
+
+/* Tarjeta base */
+#bf-card-oficial.bf-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+/* Imagen */
+#bf-card-oficial .bf-card-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+/* Info */
+#bf-card-oficial .bf-card-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+}
+
+#bf-card-oficial .bf-card-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+#bf-card-oficial .bf-card-song {
+  margin: 5px 0 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.bf-help-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgb(7, 108, 144);
+  color: white;
+  font-size: 22px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 79, 154, 0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 10;
+}
+
+.bf-help-icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(255, 79, 154, 0.8);
+}
+
+
+/* Tablet: 2 por fila */
+@media (min-width: 600px) {
+  #bf-card-oficial.bf-card {
+    flex: 1 1 calc(50% - 24px);
+    max-width: calc(50% - 24px);
+  }
+}
+
+/* Escritorio: 3 por fila */
+@media (min-width: 900px) {
+  #bf-card-oficial.bf-card {
+    flex: 1 1 calc(33.33% - 24px);
+    max-width: calc(33.33% - 24px);
+  }
+}
+
+/* Escritorio grande: 4 por fila */
+@media (min-width: 1300px) {
+  #bf-card-oficial.bf-card {
+    flex: 1 1 calc(25% - 24px);
+    max-width: calc(25% - 24px);
+  }
 }

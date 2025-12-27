@@ -1,4 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #0a0a0a;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Glow central */
+  body::before {
+    content: "";
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1400px;
+    height: 1400px;
+    background: radial-gradient(circle, rgba(255, 79, 154, 0.35), rgba(123, 47, 247, 0.15), transparent 70%);
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Glow lateral */
+  body::after {
+    content: "";
+    position: fixed;
+    bottom: -300px;
+    right: -200px;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(123, 47, 247, 0.25), transparent 70%);
+    filter: blur(120px);
+    z-index: -1;
+    pointer-events: none;
+  }
+}
