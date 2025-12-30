@@ -1,8 +1,50 @@
+@if(modalOpen){
+<div class="bf-modal-wrapper">
+
+  <div class="bf-modal-card">
+
+    <!-- HEADER -->
+    <div class="bf-modal-header">
+      <div class="bf-modal-titles">
+        <h2 class="bf-modal-title">{{participantModal.name}}</h2>
+        <p class="bf-modal-subtitle">{{participantModal.song}}</p>
+      </div>
+
+      <button mat-icon-button mat-dialog-close class="bf-close-btn">
+        <span class="bf-close-icon" (click)="closeModal()">✕</span>
+      </button>
+    </div>
+
+    <!-- BODY -->
+    <div class="bf-modal-body">
+
+      <h3 class="bf-section-title">Sobre el artista</h3>
+      <p class="bf-modal-text" [innerHTML]="participantModal.description">
+      </p>
+
+      <h3 class="bf-section-title">Sobre la canción</h3>
+      <p class="bf-modal-text" [innerHTML]="participantModal.songDescription">
+      </p>
+
+      <h3 class=" bf-section-title">Vídeo</h3>
+      <div class="bf-video-wrapper">
+        <iframe src="" allowfullscreen loading="lazy"></iframe>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+}
+
 <h1>Participantes</h1>
 <div class="bf-container">
   @for (participant of participants; track $index){
   <div id="bf-card-oficial" class="bf-card">
-    <div class="bf-help-icon"> ? </div>
+    <div class="bf-help-icon" (click)="OpenModal(participant.id)"> ? </div>
     <img class="bf-card-img" [src]="participant.image" alt="{{ participant.name }}">
     <div class="bf-card-info">
       <h2 class="bf-card-name">{{ participant.name }}</h2>

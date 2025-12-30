@@ -42,4 +42,33 @@ body {
     z-index: -1;
     pointer-events: none;
   }
+
+  /* Fuerza el ancho del modal */
+  .mat-mdc-dialog-container .mat-mdc-dialog-surface {
+    width: 90vw !important;
+    max-width: 900px !important;
+    border-radius: 0 !important;
+  }
+
+  /* Elimina la línea blanca */
+  .mat-mdc-dialog-surface {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* Centrado vertical real */
+  .mat-mdc-dialog-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100vh !important;
+  }
+
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+
+
 }

@@ -70,6 +70,141 @@
   box-shadow: 0 0 25px rgba(255, 79, 154, 0.8);
 }
 
+/* Modal para info artista*/
+.bf-dialog-panel .mat-mdc-dialog-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.bf-dialog-panel .mat-mdc-dialog-surface {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Wrapper para centrar el modal */
+.bf-modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Tarjeta principal */
+.bf-modal-card {
+  background: #0b0b0b;
+  border-radius: 22px;
+  margin-top: 50px;
+  padding: 26px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 600vh;
+  overflow-y: auto;
+  box-shadow:
+    0 0 60px rgba(255, 79, 154, 0.35),
+    0 0 120px rgba(123, 47, 247, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* HEADER */
+.bf-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.bf-modal-title {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(90deg, #ff4f9a, #7b2ff7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.bf-modal-subtitle {
+  margin: 4px 0 0;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+/* BOTÓN CLOSE BONITO */
+.bf-close-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+}
+
+.bf-close-btn:hover {
+  background: rgba(255, 79, 154, 0.4);
+  transform: scale(1.1);
+}
+
+.bf-close-icon {
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+}
+
+/* BODY */
+.bf-modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.bf-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff4f9a;
+  margin-top: 10px;
+}
+
+.bf-modal-text {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* VIDEO RESPONSIVO */
+.bf-video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 0 25px rgba(123, 47, 247, 0.5);
+}
+
+.bf-video-wrapper::before {
+  content: "";
+  display: block;
+  padding-bottom: 56.25%;
+}
+
+.bf-video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Difumina y oscurece toda la página cuando el modal está abierto */
+.cdk-overlay-backdrop {
+  background: rgba(0, 0, 0, 0.55) !important;
+  backdrop-filter: blur(10px) !important;
+  position: fixed !important;
+  inset: 0 !important;
+}
+
+
+
 
 /* Tablet: 2 por fila */
 @media (min-width: 600px) {
