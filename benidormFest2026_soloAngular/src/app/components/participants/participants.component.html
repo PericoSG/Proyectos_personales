@@ -28,7 +28,10 @@
 
       <h3 class=" bf-section-title">Vídeo</h3>
       <div class="bf-video-wrapper">
-        <iframe src="" allowfullscreen loading="lazy"></iframe>
+
+        <iframe [src]="safeVideoUrl" allowfullscreen loading="lazy">
+        </iframe>
+
       </div>
 
     </div>
