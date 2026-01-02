@@ -1,3 +1,26 @@
+<div class="bf-view-switcher">
+
+  <!-- GRID -->
+  <button [class.active]="view === 'grid'" (click)="changeView('grid')">
+    <svg viewBox="0 0 24 24">
+      <rect x="3" y="3" width="8" height="8" rx="2" />
+      <rect x="13" y="3" width="8" height="8" rx="2" />
+      <rect x="3" y="13" width="8" height="8" rx="2" />
+      <rect x="13" y="13" width="8" height="8" rx="2" />
+    </svg>
+  </button>
+
+  <!-- LIST -->
+  <button [class.active]="view === 'list'" (click)="changeView('list')">
+    <svg viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="3" rx="1.5" />
+      <rect x="3" y="10.5" width="18" height="3" rx="1.5" />
+      <rect x="3" y="17" width="18" height="3" rx="1.5" />
+    </svg>
+  </button>
+
+</div>
+
 @if(modalOpen){
 <div class="bf-modal-wrapper">
 
@@ -44,8 +67,10 @@
 }
 
 <h1>Participantes</h1>
+@if(view == 'grid' || view == ''){
 <div class="bf-container">
   @for (participant of participants; track $index){
+
   <div id="bf-card-oficial" class="bf-card">
     <div class="bf-help-icon" (click)="OpenModal(participant.id)"> ? </div>
     <img class="bf-card-img" [src]="participant.image" alt="{{ participant.name }}">
@@ -56,3 +81,30 @@
   </div>
   }
 </div>
+}
+@if (view == 'list')
+{
+<div class="bf-double-list">
+  @for (p of participants; track $index) {
+  <div class="bf-double-item">
+
+    <div class="bf-double-rank">{{ $index + 1 }}</div>
+
+    <img class="bf-double-img" [src]="p.image" alt="{{ p.name }}">
+
+    <div class="bf-double-info">
+      <h4>{{ p.name }}</h4>
+      <p>{{ p.song }}</p>
+    </div>
+
+    <div class="bf-double-action">
+      <div class="bf-help-icon" (click)="OpenModal(p.id)">?</div>
+    </div>
+
+  </div>
+  }
+</div>
+
+
+
+}

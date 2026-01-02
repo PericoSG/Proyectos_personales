@@ -1,3 +1,53 @@
+.bf-view-switcher {
+  display: flex;
+  gap: 10px;
+  /* más separación entre botones */
+  margin-top: 32px;
+  /* antes 18px → ahora baja más */
+  margin-left: 10px;
+}
+
+.bf-view-switcher button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.bf-view-switcher button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.05);
+  /* elegante */
+}
+
+.bf-view-switcher button.active {
+  background: linear-gradient(135deg, #ff4f9a, #7b2ff7);
+  border-color: transparent;
+  transform: scale(1.08);
+  /* efecto premium */
+}
+
+.bf-view-switcher button svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+
+.bf-view-switcher button.active svg {
+  opacity: 1;
+}
+
+
 .bf-container {
   display: flex;
   flex-wrap: wrap;
@@ -205,6 +255,92 @@
   position: fixed !important;
   inset: 0 !important;
 }
+
+/* SI el usuario quiero verlo como de forma de lista*/
+/* GRID 18/2 */
+.bf-double-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* BOX */
+.bf-double-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 14px;
+  border-radius: 14px;
+  gap: 14px;
+  position: relative;
+}
+
+/* RANK */
+.bf-double-rank {
+  font-size: 20px;
+  font-weight: 700;
+  width: 28px;
+  text-align: center;
+  color: #ff4f9a;
+}
+
+/* IMAGE */
+.bf-double-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* TEXT */
+.bf-double-info {
+  flex: 1;
+  /* Esto empuja el botón al final */
+}
+
+.bf-double-info h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.bf-double-info p {
+  margin: 0;
+  opacity: 0.7;
+  font-size: 15px;
+}
+
+/* ACTION (BOTÓN ?) */
+.bf-double-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  /* asegura espacio */
+}
+
+.bf-double-item .bf-help-icon {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  margin-left: 8px;
+  top: 30%;
+}
+
+
+
+@media (max-width: 700px) {
+  .bf-double-list {
+    grid-template-columns: 1fr;
+  }
+
+  .bf-double-img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+
 
 
 

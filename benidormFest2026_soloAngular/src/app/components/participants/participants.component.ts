@@ -11,6 +11,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class ParticipantsComponent {
 
+  view: string = "grid"
+
   participants = [
     {
       id: 1,
@@ -330,6 +332,10 @@ export class ParticipantsComponent {
     const participant = this.participants.find(p => p.id === participantId);
     console.log(participant)
     return participant;
+  }
+
+  changeView(newView: string) {
+    this.view = newView;
   }
 
 
