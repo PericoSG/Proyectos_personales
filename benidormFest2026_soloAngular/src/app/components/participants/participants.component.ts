@@ -25,7 +25,7 @@ export class ParticipantsComponent {
       <p><em>“Turista”</em> explora el amor, la distancia y la identidad desde la mirada de una mujer en constante movimiento. Habla de un romance fugaz bajo el sol del Mediterráneo que se desvanece con el tiempo.</p>
       <p>La protagonista recorre recuerdos, estaciones y paisajes mientras busca a alguien que ya no está, dudando si lo vivido fue real o parte del viaje.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861626'
+      video: 'https://www.youtube.com/embed/xZfduqR8Ncg?si=66hBqzULr50bL1YDs'
     },
 
     {
@@ -41,7 +41,7 @@ export class ParticipantsComponent {
       <p><em>“Dopamina”</em> es un tema que celebra el deseo, la atracción y la euforia del amor. Combina ritmos latinos y árabes para crear una atmósfera intensa y envolvente.</p>
       <p>La canción busca transmitir adrenalina y emoción desde la primera nota, reflejando la química entre dos personas que se desean.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861627'
+      video: 'https://www.youtube.com/embed/b-WYg1QYpeo?si=bv_DLlja_GKpt0CW'
     },
 
     {
@@ -57,7 +57,7 @@ export class ParticipantsComponent {
       <p><em>“Bailándote”</em> es una historia de amor contada a través del baile, donde dos personas se encuentran sin palabras y se entienden solo con el movimiento.</p>
       <p>La canción celebra la conexión instantánea y la magia de un momento compartido en la pista.</p>
     `,
-      video: ''
+      video: 'https://www.youtube.com/embed/aRcomUJGy4w?si=A-wPJM0u89_-OK26'
     },
 
     {
@@ -73,7 +73,7 @@ export class ParticipantsComponent {
       <p><em>“Rakatá”</em> fusiona balada, cumbia, reggaetón y electrónica para contar un juego de seducción y tensión entre dos jóvenes que se atraen y discuten a la vez.</p>
       <p>La canción refleja ese tira y afloja emocional tan típico de las relaciones intensas y juveniles.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861630'
+      video: 'https://www.youtube.com/embed/xtLdWfNnC-w?si=7IK7k_ozWF9xZGjY'
     },
 
     {
@@ -89,7 +89,7 @@ export class ParticipantsComponent {
       <p><em>“SOBRAN GILIPO**AS”</em> es un tema catártico que habla de alejarse de personas que no aportan y de liberarse de energías negativas.</p>
       <p>La canción critica a quienes se aprovechan de los demás y celebra la decisión de poner límites.</p>
     `,
-      video: ''
+      video: 'https://www.youtube.com/embed/yNZc0kiLI-o?si=Gv1JHuxPWkau7u0t'
     },
 
     {
@@ -105,7 +105,7 @@ export class ParticipantsComponent {
       <p><em>“Velita”</em> es una canción que habla de mantener viva la llama de un amor, recordando cada detalle de una relación pasada o presente.</p>
       <p>El tema mezcla nostalgia y esperanza, creando una atmósfera íntima y emocional.</p>
     `,
-      video: ''
+      video: 'https://www.youtube.com/embed/Uiyn-oFHvXk?si=kVDqAZTottEbAjZ8'
     },
 
     {
@@ -121,7 +121,7 @@ export class ParticipantsComponent {
       <p><em>“¿Qué vas a hacer?”</em> habla del primer flechazo, ese momento que lo cambia todo y que se vive con intensidad absoluta.</p>
       <p>La canción refleja la ilusión, la duda y la emoción de un amor que nace de forma inesperada.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861638'
+      video: 'https://www.youtube.com/embed/WQ7RLV0da2w?si=Cz7XYZTUJGuAiNaH'
     },
 
     {
@@ -137,7 +137,7 @@ export class ParticipantsComponent {
       <p><em>“Los Ojos No Mienten”</em> nace de un encuentro fugaz en una fiesta donde dos personas conectan sin necesidad de palabras.</p>
       <p>La canción celebra la química instantánea y la magia de las miradas que lo dicen todo.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861639'
+      video: 'https://www.youtube.com/embed/t5DPhcmOm8s?si=8s-4eQ5GhF5zaf-D'
     },
 
     {
@@ -153,7 +153,7 @@ export class ParticipantsComponent {
       <p><em>“El Amor Te Da Miedo”</em> habla de relaciones profundas donde una de las partes teme comprometerse o entregarse por completo.</p>
       <p>La canción es honesta y emocional, basada en experiencias reales y sentimientos intensos.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861640'
+      video: 'https://www.youtube.com/embed/QsFp5DuwEQ0?si=zMcn1HUtztLSy2rJ'
     },
 
     {
@@ -169,7 +169,7 @@ export class ParticipantsComponent {
       <p><em>“No Volveré a Llorar”</em> refleja desilusión, agotamiento y liberación emocional tras una etapa difícil.</p>
       <p>La canción habla de romper ataduras, sanar y mirar hacia adelante con fuerza renovada.</p>
     `,
-      video: ''
+      video: 'https://www.youtube.com/embed/4RR2M9sbBDs?si=0IaHP6ICeAheOxC7'
     },
 
     {
@@ -185,7 +185,7 @@ export class ParticipantsComponent {
       <p><em>“Bomba de Amor”</em> es un canto a la libertad, la seducción y el amor sin ataduras.</p>
       <p>La canción invita a dejarse llevar por el baile, la pasión y la energía del momento.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861645',
+      video: 'https://www.youtube.com/embed/XOTLAlUPgCM?si=IVCEaUCVMYyyNa8j',
     },
 
     {
@@ -201,7 +201,7 @@ export class ParticipantsComponent {
       <p><em>“Las Damas y el Vagabundo”</em> celebra la sororidad, la amistad y la unión entre mujeres.</p>
       <p>La canción es luminosa, emotiva y transmite un mensaje de apoyo mutuo y fortaleza compartida.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861655'
+      video: 'https://www.youtube.com/embed/zYTZK88XADw?si=lmqQg12BSjlU10rU'
     },
 
     {
@@ -217,7 +217,7 @@ export class ParticipantsComponent {
       <p><em>“Tócame”</em> habla del autoengaño y la adicción a relaciones tóxicas que atrapan entre fantasía y realidad.</p>
       <p>La canción refleja la lucha interna entre lo que se desea y lo que realmente hace daño.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861657'
+      video: 'https://www.youtube.com/embed/lmjTqH50_mQ?si=Db-TXeFkFrGd2nbW'
     },
 
     {
@@ -233,7 +233,7 @@ export class ParticipantsComponent {
       <p><em>“Mi Mitad”</em> explora la lucha interna entre luz y oscuridad dentro de uno mismo.</p>
       <p>La canción habla de reconciliar fuerzas opuestas y enfrentarse a la propia mente.</p>
     `,
-      video: ''
+      video: 'https://www.youtube.com/embed/tdU0509Mj0I?si=0YQmQcBQxQ5NcMkw'
     },
 
     {
@@ -249,7 +249,7 @@ export class ParticipantsComponent {
       <p><em>“Despierto Amándote”</em> es un tema XXL que celebra el amor, la vida y la intensidad de los sentimientos sin vergüenza.</p>
       <p>La canción invita a vivir con color, pasión y libertad emocional.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861666'
+      video: 'https://www.youtube.com/embed/JHUDkBzM-8w?si=7tcAZeQ3zjbAhuRf'
     },
 
     {
@@ -265,7 +265,7 @@ export class ParticipantsComponent {
       <p><em>“Mataora”</em> da voz a Carmen, la protagonista de la novela de Mérimée, una mujer libre, deseada y nunca poseída.</p>
       <p>La canción reivindica su historia desde una perspectiva propia, fuerte y empoderada.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861675'
+      video: 'https://www.youtube.com/embed/Wq-tXF28goY?si=SYsYws12EDoWBdpn'
     },
 
     {
@@ -281,7 +281,7 @@ export class ParticipantsComponent {
       <p><em>“Tú No Me Quieres”</em> nace del despecho tras sentirse utilizado en una relación donde se fingió un vínculo afectivo.</p>
       <p>La canción expresa rabia, desengaño y la necesidad de romper con lo que no es real.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861677'
+      video: 'https://www.youtube.com/embed/T27dXhSRGpg?si=La-LF56Vk_trGYI_'
     },
 
     {
@@ -297,7 +297,7 @@ export class ParticipantsComponent {
       <p><em>“T Amaré”</em> es un mensaje universal al amor en todas sus formas: amistad, familia o pareja.</p>
       <p>La canción va de lo íntimo a lo colectivo, creando un final luminoso y lleno de esperanza.</p>
     `,
-      video: 'https://secure-embed.rtve.es/drmn/embed/video/16861679'
+      video: 'https://www.youtube.com/embed/8ME1d7xC_kg?si=FsCc8A3296cXkf6T'
     }
   ]
 
