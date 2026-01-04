@@ -1,1 +1,76 @@
-<p>top works!</p>
+<div class="final-top-wrapper">
+
+  <!-- TÍTULO -->
+  <h2 class="final-top-title">Tu TOP 18</h2>
+
+  <!-- 🥇🥈🥉 TOP 3 -->
+  <section class="top3-layout">
+    <div class="top-slot top2">
+      @if (finalTop[1]) {
+      <div class="top-card silver">
+        <h3>{{ finalTop[1].name }}</h3>
+        <p>{{ finalTop[1].song }}</p>
+      </div>
+      } @else {
+      <div class="top-placeholder">2</div>
+      }
+    </div>
+
+    <div class="top-slot top1">
+      @if (finalTop[0]) {
+      <div class="top-card gold">
+        <h2>{{ finalTop[0].name }}</h2>
+        <p>{{ finalTop[0].song }}</p>
+      </div>
+      } @else {
+      <div class="top-placeholder">1</div>
+      }
+    </div>
+
+    <div class="top-slot top3">
+      @if (finalTop[2]) {
+      <div class="top-card bronze">
+        <h3>{{ finalTop[2].name }}</h3>
+        <p>{{ finalTop[2].song }}</p>
+      </div>
+      } @else {
+      <div class="top-placeholder">3</div>
+      }
+    </div>
+  </section>
+
+  <!-- 🔢 Posiciones 4–18 -->
+  <section class="rest-grid">
+    @for (slot of finalTop.slice(3); let i = $index; track i) {
+    <div class="rest-card">
+      <span class="rest-number">{{ i + 4 }}</span>
+      @if (slot) {
+      <div class="rest-info">
+        <h4>{{ slot.name }}</h4>
+        <p>{{ slot.song }}</p>
+      </div>
+      } @else {
+      <div class="rest-placeholder">Vacío</div>
+      }
+    </div>
+    }
+  </section>
+
+
+
+  <div class="bf-top18-divider">
+    <span>Artistas disponibles</span>
+  </div>
+
+  <!-- POOL DE ARTISTAS (solo visual) -->
+  <section class="bf-top18-pool">
+    @for (artist of participants; track artist.id) {
+    <div class="bf-artist-card">
+      <div class="bf-artist-info">
+        <h3>{{ artist.name }}</h3>
+        <p>{{ artist.song }}</p>
+      </div>
+    </div>
+    }
+  </section>
+</div>

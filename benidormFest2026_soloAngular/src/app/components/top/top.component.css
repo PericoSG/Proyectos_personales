@@ -1,0 +1,249 @@
+/* CONTENEDOR GENERAL */
+.bf-top18-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 40px;
+}
+
+/* 🥇🥈🥉 TOP 3 */
+.top3-layout {
+  display: grid;
+  grid-template-areas: ". top1 ." "top2 . top3";
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  justify-items: center;
+}
+
+.top-slot {
+  width: 180px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top1 {
+  grid-area: top1;
+}
+
+.top2 {
+  grid-area: top2;
+}
+
+.top3 {
+  grid-area: top3;
+}
+
+.top-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.top-card.gold {
+  font-size: 18px;
+  background: linear-gradient(to bottom, #ffd70033, #ffffff05);
+}
+
+.top-card.silver {
+  background: linear-gradient(to bottom, #c0c0c033, #ffffff05);
+}
+
+.top-card.bronze {
+  background: linear-gradient(to bottom, #cd7f3233, #ffffff05);
+}
+
+.top-placeholder {
+  font-size: 22px;
+  opacity: 0.5;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔢 RESTO DEL TOP */
+.rest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.rest-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rest-number {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff4f9a;
+  width: 24px;
+  text-align: right;
+}
+
+.rest-info h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.rest-info p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.rest-placeholder {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* CABECERA */
+.bf-top18-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.bf-top18-header p {
+  margin: 4px 0 0;
+  opacity: 0.75;
+  font-size: 14px;
+}
+
+/* GRID DE SLOTS (1–18) */
+.bf-top18-slots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* CADA SLOT */
+.bf-top18-slot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 64px;
+}
+
+/* NÚMERO DEL SLOT */
+.bf-top18-slot-label {
+  font-weight: 700;
+  font-size: 16px;
+  width: 28px;
+  text-align: right;
+  color: #ff4f9a;
+  flex-shrink: 0;
+}
+
+
+
+/* MINI CARD DENTRO DEL SLOT */
+.bf-artist-mini-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 8px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.bf-artist-mini-info h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.bf-artist-mini-info p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* DIVISOR */
+.bf-top18-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  top: 30px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.bf-top18-divider::before,
+.bf-top18-divider::after {
+  content: "";
+  flex: 1;
+  height: 6px;
+  top: 50px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.25), transparent);
+}
+
+/* GRID DE ARTISTAS DISPONIBLES */
+.bf-top18-pool {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* CARD DE ARTISTA */
+.bf-artist-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bf-artist-info h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.bf-artist-info p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .bf-top18-slots {
+    grid-template-columns: 1fr;
+  }
+
+  .bf-top18-pool {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .bf-top18-pool {
+    grid-template-columns: 1fr;
+  }
+}
