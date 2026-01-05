@@ -3,74 +3,170 @@
   <!-- TÍTULO -->
   <h2 class="final-top-title">Tu TOP 18</h2>
 
-  <!-- 🥇🥈🥉 TOP 3 -->
   <section class="top3-layout">
-    <div class="top-slot top2">
-      @if (finalTop[1]) {
-      <div class="top-card silver">
-        <h3>{{ finalTop[1].name }}</h3>
-        <p>{{ finalTop[1].song }}</p>
+
+    <!-- TOP 2 -->
+    <div class="top-slot top2" cdkDropList [id]="'slot-1'" [cdkDropListConnectedTo]="connectedDropLists"
+      (cdkDropListDropped)="onDropToSlot($event, 1)">
+      <div class="top-number">2</div>
+
+      @if (top18[1]) {
+      <div class="top-card silver" cdkDrag [cdkDragData]="top18[1]">
+        <img class="top-img" [src]="top18[1].image" [alt]="top18[1].name" />
+        <h3>{{ top18[1].name }}</h3>
+        <p>{{ top18[1].song }}</p>
       </div>
       } @else {
-      <div class="top-placeholder">2</div>
+      <div class="top-placeholder"></div>
       }
     </div>
 
-    <div class="top-slot top1">
-      @if (finalTop[0]) {
-      <div class="top-card gold">
-        <h2>{{ finalTop[0].name }}</h2>
-        <p>{{ finalTop[0].song }}</p>
+    <!-- TOP 1 -->
+    <div class="top-slot top1" cdkDropList [id]="'slot-0'" [cdkDropListConnectedTo]="connectedDropLists"
+      (cdkDropListDropped)="onDropToSlot($event, 0)">
+      <div class="top-number">1</div>
+      <div class="crown">👑</div>
+
+      @if (top18[0]) {
+      <div class="top-card gold" cdkDrag [cdkDragData]="top18[0]">
+        <img class="top-img" [src]="top18[0].image" [alt]="top18[0].name" />
+        <h2>{{ top18[0].name }}</h2>
+        <p>{{ top18[0].song }}</p>
+
       </div>
       } @else {
-      <div class="top-placeholder">1</div>
+      <div class="top-placeholder"></div>
       }
     </div>
 
-    <div class="top-slot top3">
-      @if (finalTop[2]) {
-      <div class="top-card bronze">
-        <h3>{{ finalTop[2].name }}</h3>
-        <p>{{ finalTop[2].song }}</p>
+    <!-- TOP 3 -->
+    <div class="top-slot top3" cdkDropList [id]="'slot-2'" [cdkDropListConnectedTo]="connectedDropLists"
+      (cdkDropListDropped)="onDropToSlot($event, 2)">
+      <div class="top-number">3</div>
+
+      @if (top18[2]) {
+      <div class="top-card bronze" cdkDrag [cdkDragData]="top18[2]">
+        <img class="top-img" [src]="top18[2].image" [alt]="top18[2].name" />
+        <h3>{{ top18[2].name }}</h3>
+        <p>{{ top18[2].song }}</p>
       </div>
       } @else {
-      <div class="top-placeholder">3</div>
+      <div class="top-placeholder"></div>
       }
     </div>
+
   </section>
 
-  <!-- 🔢 Posiciones 4–18 -->
-  <section class="rest-grid">
-    @for (slot of finalTop.slice(3); let i = $index; track i) {
-    <div class="rest-card">
-      <span class="rest-number">{{ i + 4 }}</span>
-      @if (slot) {
-      <div class="rest-info">
-        <h4>{{ slot.name }}</h4>
-        <p>{{ slot.song }}</p>
+
+
+  <section class="rest-grid-blocks">
+
+    <!-- Columna 1 -->
+    <div class="rest-column">
+      @for (i of [3, 4, 5, 6, 7]; track i) {
+      <div class="rest-card" cdkDropList [id]="'slot-' + i" [cdkDropListConnectedTo]="connectedDropLists"
+        (cdkDropListDropped)="onDropToSlot($event, i)">
+
+        <!-- Número grande -->
+        <div class="rest-left">{{ i + 1 }}</div>
+
+        <!-- Contenido -->
+        @if (top18[i]) {
+        <div class="rest-center" cdkDrag [cdkDragData]="top18[i]">
+
+          <img class="rest-img" [src]="top18[i].image" [alt]="top18[i].name" />
+
+          <div class="rest-text">
+            <h4>{{ top18[i].name }}</h4>
+            <p>{{ top18[i].song }}</p>
+          </div>
+
+
+        </div>
+        } @else {
+        <div class="rest-center">
+          <span class="rest-empty"></span>
+        </div>
+        }
+
       </div>
-      } @else {
-      <div class="rest-placeholder">Vacío</div>
       }
+    </div>
+
+    <!-- Columna 2 -->
+    <div class="rest-column">
+      @for (i of [8, 9, 10, 11, 12]; track i) {
+      <div class="rest-card" cdkDropList [id]="'slot-' + i" [cdkDropListConnectedTo]="connectedDropLists"
+        (cdkDropListDropped)="onDropToSlot($event, i)">
+
+        <div class="rest-left">{{ i + 1 }}</div>
+
+        @if (top18[i]) {
+        <div class="rest-center" cdkDrag [cdkDragData]="top18[i]">
+
+          <img class="rest-img" [src]="top18[i].image" [alt]="top18[i].name" />
+
+          <div class="rest-text">
+            <h4>{{ top18[i].name }}</h4>
+            <p>{{ top18[i].song }}</p>
+          </div>
+
+        </div>
+        } @else {
+        <div class="rest-center">
+          <span class="rest-empty"></span>
+        </div>
+        }
+
+      </div>
+      }
+    </div>
+
+    <!-- Columna 3 -->
+    <div class="rest-column">
+      @for (i of [13, 14, 15, 16, 17]; track i) {
+      <div class="rest-card" cdkDropList [id]="'slot-' + i" [cdkDropListConnectedTo]="connectedDropLists"
+        (cdkDropListDropped)="onDropToSlot($event, i)">
+
+        <div class="rest-left">{{ i + 1 }}</div>
+
+        @if (top18[i]) {
+        <div class="rest-center" cdkDrag [cdkDragData]="top18[i]">
+
+          <img class="rest-img" [src]="top18[i].image" [alt]="top18[i].name" />
+
+          <div class="rest-text">
+            <h4>{{ top18[i].name }}</h4>
+            <p>{{ top18[i].song }}</p>
+          </div>
+
+        </div>
+        } @else {
+        <div class="rest-center">
+          <span class="rest-empty"></span>
+        </div>
+        }
+
+      </div>
+      }
+    </div>
+
+  </section>
+
+
+  <h3 class="available-title">Artistas disponibles</h3>
+
+  <section class="participant-pool" cdkDropList id="participants" [cdkDropListConnectedTo]="connectedDropLists"
+    (cdkDropListDropped)="onDropToParticipant($event)">
+
+    @for (participant of participants; track participant.id) {
+    <div class="participant-card" cdkDrag [cdkDragData]="participant">
+      <img class="participant-img" [src]="participant.image" [alt]="participant.name" />
+      <div class="participant-info">
+        <h4>{{ participant.name }}</h4>
+        <p>{{ participant.song }}</p>
+      </div>
     </div>
     }
+
   </section>
-
-
-
-  <div class="bf-top18-divider">
-    <span>Artistas disponibles</span>
-  </div>
-
-  <!-- POOL DE ARTISTAS (solo visual) -->
-  <section class="bf-top18-pool">
-    @for (artist of participants; track artist.id) {
-    <div class="bf-artist-card">
-      <div class="bf-artist-info">
-        <h3>{{ artist.name }}</h3>
-        <p>{{ artist.song }}</p>
-      </div>
-    </div>
-    }
-  </section>
-</div>

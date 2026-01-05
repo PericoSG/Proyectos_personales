@@ -6,244 +6,311 @@
   padding-bottom: 40px;
 }
 
-/* 🥇🥈🥉 TOP 3 */
+/* ========================= */
+/* TOP 3 PODIO               */
+/* ========================= */
+
 .top3-layout {
   display: grid;
-  grid-template-areas: ". top1 ." "top2 . top3";
+  grid-template-areas:
+    ".    top1 ."
+    "top2 . top3";
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
-  justify-items: center;
-}
-
-.top-slot {
-  width: 180px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .top1 {
   grid-area: top1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .top2 {
   grid-area: top2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .top3 {
   grid-area: top3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ff4f9a;
+  margin-bottom: 6px;
+  text-shadow: 0 0 8px rgba(255, 79, 154, 0.4);
+}
+
+.crown {
+  font-size: 40px;
+  margin-bottom: -10px;
+  animation: crownFloat 2s ease-in-out infinite;
+}
+
+@keyframes crownFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .top-card {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  padding: 12px;
+  width: 200px;
+  min-height: 150px;
+  border-radius: 14px;
+  padding: 14px;
   text-align: center;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  cursor: grab;
 }
 
-.top-card.gold {
-  font-size: 18px;
+.top1 .top-card {
+  width: 230px;
+  min-height: 170px;
+  transform: scale(1.05);
+}
+
+.top-img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.gold {
   background: linear-gradient(to bottom, #ffd70033, #ffffff05);
 }
 
-.top-card.silver {
+.silver {
   background: linear-gradient(to bottom, #c0c0c033, #ffffff05);
 }
 
-.top-card.bronze {
+.bronze {
   background: linear-gradient(to bottom, #cd7f3233, #ffffff05);
 }
 
 .top-placeholder {
-  font-size: 22px;
-  opacity: 0.5;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 150px;
+  border-radius: 14px;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.5;
 }
 
-/* 🔢 RESTO DEL TOP */
-.rest-grid {
+/* ========================= */
+/* TOP 4–18                  */
+/* ========================= */
+
+.rest-grid-blocks {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.rest-column {
+  width: 100%;
+  max-width: 480px;
+  /* AJUSTA AQUÍ EL ANCHO REAL QUE QUIERES */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+
+/* Tarjeta larga */
+.rest-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: linear-gradient(to right, #1a0b2e, #2c124a);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 90px;
+  width: 100%;
+  max-width: 420px;
+  /* FILA LARGA */
+  position: relative;
+  color: white;
+}
+
+/* Número grande */
+.rest-left {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ff4f9a;
+  width: 40px;
+}
+
+/* Contenido */
+.rest-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+
+/* Imagen grande */
+.rest-img {
+  width: 85px;
+  height: 85px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Texto */
+.rest-text h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.rest-text p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+
+/* Vacío */
+.rest-empty {
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+
+
+/* ========================= */
+/* PARTICIPANTES DISPONIBLES     */
+/* ========================= */
+
+.participant-pool {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
 
-.rest-card {
+.participant-card {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-  padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.rest-number {
-  font-size: 16px;
-  font-weight: 700;
-  color: #ff4f9a;
-  width: 24px;
-  text-align: right;
-}
-
-.rest-info h4 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.rest-info p {
-  margin: 2px 0 0;
-  font-size: 13px;
-  opacity: 0.75;
-}
-
-.rest-placeholder {
-  font-size: 13px;
-  opacity: 0.6;
-}
-
-/* CABECERA */
-.bf-top18-header h2 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.bf-top18-header p {
-  margin: 4px 0 0;
-  opacity: 0.75;
-  font-size: 14px;
-}
-
-/* GRID DE SLOTS (1–18) */
-.bf-top18-slots {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-/* CADA SLOT */
-.bf-top18-slot {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  min-height: 64px;
-}
-
-/* NÚMERO DEL SLOT */
-.bf-top18-slot-label {
-  font-weight: 700;
-  font-size: 16px;
-  width: 28px;
-  text-align: right;
-  color: #ff4f9a;
-  flex-shrink: 0;
-}
-
-
-
-/* MINI CARD DENTRO DEL SLOT */
-.bf-artist-mini-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  padding: 8px;
-  border-radius: 8px;
-  width: 100%;
-}
-
-.bf-artist-mini-info h4 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.bf-artist-mini-info p {
-  margin: 2px 0 0;
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-/* DIVISOR */
-.bf-top18-divider {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  top: 30px;
-  font-size: 13px;
-  opacity: 0.7;
-}
-
-.bf-top18-divider::before,
-.bf-top18-divider::after {
-  content: "";
-  flex: 1;
-  height: 6px;
-  top: 50px;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.25), transparent);
-}
-
-/* GRID DE ARTISTAS DISPONIBLES */
-.bf-top18-pool {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-/* CARD DE ARTISTA */
-.bf-artist-card {
-  display: flex;
-  align-items: center;
   gap: 12px;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: grab;
 }
 
-.bf-artist-info h3 {
+.participant-img {
+  width: 85px;
+  height: 85px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.participant-info h4 {
   margin: 0;
   font-size: 15px;
   font-weight: 600;
 }
 
-.bf-artist-info p {
+.participant-info p {
   margin: 2px 0 0;
   font-size: 13px;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
-  .bf-top18-slots {
-    grid-template-columns: 1fr;
+
+/* TABLET */
+@media (min-width: 600px) and (max-width: 1024px) {
+
+  .rest-grid-blocks {
+    gap: 26px;
   }
 
-  .bf-top18-pool {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .rest-column {
+    width: 100%;
+    max-width: 360px;
   }
+
+  .rest-card {
+    max-width: 360px;
+    min-height: 95px;
+    padding: 14px 16px;
+  }
+
+  .rest-left {
+    font-size: 24px;
+    width: 38px;
+  }
+
+  .rest-img {
+    width: 65px;
+    height: 65px;
+  }
+
+
 }
 
+/* MÓVIL */
 @media (max-width: 600px) {
-  .bf-top18-pool {
-    grid-template-columns: 1fr;
+
+  .rest-grid-blocks {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
+
+  .rest-column {
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .rest-card {
+    max-width: 100%;
+    min-height: 80px;
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .rest-left {
+    font-size: 22px;
+    width: 32px;
+  }
+
+  .rest-img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .rest-text h4 {
+    font-size: 14px;
+  }
+
+  .rest-text p {
+    font-size: 12px;
+  }
+
 }
