@@ -1,77 +1,92 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">☀️ SummerFun</a>
+    <a class="navbar-brand fw-bold text-warning fs-3" href="#">☀️ SummerFun</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#features">¿Qué ofrecemos?</a></li>
         <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-        <li class="nav-item"><a class="btn btn-outline-primary ms-3" href="/login.html">Iniciar sesión</a>
+        <li class="nav-item">
+          <a class="btn btn-outline-primary ms-3 rounded-pill" routerLink="../inicioSesion">Iniciar sesión</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- HERO / LANDING PRINCIPAL -->
-<header class="hero" id="inicio">
-  <div class="container">
-    <h1 class="mb-3">Un verano inolvidable te espera</h1>
-    <p>Explora actividades, talleres y experiencias únicas</p>
-    <a href="#features" class="btn btn-primary btn-lg mt-4">Descubrir más</a>
+<!-- HERO -->
+<header class="hero d-flex align-items-center justify-content-center text-center"
+  style="height: 85vh; background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e'); background-size: cover; background-position: center;">
+  <div class="bg-white bg-opacity-75 p-5 rounded-4 shadow-lg">
+    <h1 class="fw-bold text-primary mb-3">Un verano inolvidable te espera</h1>
+    <p class="text-secondary fs-5">Explora actividades, talleres y experiencias únicas</p>
+    <a href="#features" class="btn btn-primary btn-lg rounded-pill mt-3">Descubrir más</a>
   </div>
 </header>
 
-<!-- SECCIÓN DE CARACTERÍSTICAS / FEATURES -->
-<section id="features" class="py-5">
+<!-- FEATURES -->
+<section id="features" class="py-5 bg-light">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="section-title">¿Qué ofrecemos?</h2>
+      <h2 class="fw-bold text-primary">¿Qué ofrecemos?</h2>
       <p class="text-muted">Todo lo que necesitas para organizar y disfrutar actividades veraniegas</p>
     </div>
+
     <div class="row g-4">
-      <div class="col-md-4 text-center">
-        <div class="feature-icon">🌞</div>
-        <h5><a href="/actividades.html" class="text-decoration-none text-dark">Actividades Variadas</a></h5>
-        <p class="text-muted">Deporte, arte, tecnología, aventura y más. ¡Para todos los gustos!</p>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm text-center p-4 rounded-4">
+          <div class="fs-1 mb-3">🌞</div>
+          <h5><a href="/actividades.html" class="text-decoration-none text-dark fw-bold">Actividades Variadas</a></h5>
+          <p class="text-muted">Deporte, arte, tecnología, aventura y más. ¡Para todos los gustos!</p>
+        </div>
       </div>
-      <div class="col-md-4 text-center">
-        <div class="feature-icon">📝</div>
-        <h5><a href="/registro.html" class="text-decoration-none text-dark">Regístrate Fácilmente</a></h5>
-        <p class="text-muted">Accede a tu espacio personal en minutos y gestiona tu verano.</p>
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm text-center p-4 rounded-4">
+          <div class="fs-1 mb-3">📝</div>
+          <h5><a href="/registro.html" class="text-decoration-none text-dark fw-bold">Regístrate Fácilmente</a></h5>
+          <p class="text-muted">Accede a tu espacio personal en minutos y gestiona tu verano.</p>
+        </div>
       </div>
-      <div class="col-md-4 text-center">
-        <div class="feature-icon">⚙️</div>
-        <h5><a href="/admin.html" class="text-decoration-none text-dark">Gestión Avanzada</a></h5>
-        <p class="text-muted">Administradores y monitores tienen paneles de control potentes y seguros.</p>
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm text-center p-4 rounded-4">
+          <div class="fs-1 mb-3">⚙️</div>
+          <h5><a href="/admin.html" class="text-decoration-none text-dark fw-bold">Gestión Avanzada</a></h5>
+          <p class="text-muted">Administradores y monitores tienen paneles de control potentes y seguros.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN DE TESTIMONIOS -->
-<section id="testimonios" class="py-5 bg-light">
+<!-- TESTIMONIOS -->
+<section id="testimonios" class="py-5 bg-white">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="section-title">Testimonios</h2>
+      <h2 class="fw-bold text-primary">Testimonios</h2>
     </div>
+
     <div class="row g-4">
       <div class="col-md-6">
-        <div class="testimonial">
-          <p>“Gracias a esta plataforma mis hijos disfrutaron de talleres increíbles y pude ver todo desde
-            el móvil.”</p>
-          <small class="text-muted">– Laura, madre</small>
+        <div class="p-4 bg-light rounded-4 shadow-sm">
+          <p class="fst-italic">“Gracias a esta plataforma mis hijos disfrutaron de talleres increíbles y pude ver todo
+            desde el móvil.”</p>
+          <small class="text-primary fw-bold">– Laura, madre</small>
         </div>
       </div>
+
       <div class="col-md-6">
-        <div class="testimonial">
-          <p>“Como monitor, fue muy fácil gestionar mis actividades y comunicarme con los responsables.”
-          </p>
-          <small class="text-muted">– Jorge, monitor</small>
+        <div class="p-4 bg-light rounded-4 shadow-sm">
+          <p class="fst-italic">“Como monitor, fue muy fácil gestionar mis actividades y comunicarme con los
+            responsables.”</p>
+          <small class="text-primary fw-bold">– Jorge, monitor</small>
         </div>
       </div>
     </div>
